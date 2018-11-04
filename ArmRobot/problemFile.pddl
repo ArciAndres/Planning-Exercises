@@ -1,0 +1,22 @@
+(define (problem armRobot-1)
+    (:domain ArmRobot)
+    (:objects yellow red blue pos1 pos2 pos3 pos4)
+    (:init
+        (cup yellow)(cup red)(cup blue)
+        (pos pos1)(pos pos2)(pos pos3)(pos pos4)
+        (at yellow pos1)
+        (at red pos3)
+        (at blue pos4)
+        (clear pos2)
+        (not (clear pos1))
+        (not (clear pos3))
+        (not (clear pos4))
+    )
+    (:goal
+        (and
+            (at yellow pos2)
+            (at red pos1)
+            (at blue pos3)
+        )
+    )
+)

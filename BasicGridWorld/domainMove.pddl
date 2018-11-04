@@ -1,0 +1,13 @@
+(define (domain BasicGridWorldMove)
+    (:requirements :strips)
+    (:predicates    (agent ?ag)
+                    (at ?ag ?sq )
+                    (obs ?sq)
+                    (adj ?sq1 ?sq2)
+    )
+    (:action move 
+        :parameters (?ag ?from ?to)
+        :precondition (and (at ?ag ?from)(not (obs ?to))(adj ?from ?to))
+        :effect (and (at ?ag ?to)(not(at ?ag ?from)))
+        )    
+)

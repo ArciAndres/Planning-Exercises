@@ -1,0 +1,25 @@
+(define (domain ArmRobot)
+    (:requirements :strips)
+	(:predicates 
+		(at ?x ?y)
+		(cup ?x)
+        (clear ?x)
+        (pos ?p)
+	)
+	(:action move
+		:parameters (?from ?to ?cup)
+		:precondition (and
+            (pos ?from)
+            (pos ?to)
+            (cup ?cup)
+            (clear ?to)
+            (at ?cup ?from)
+            )
+		:effect (and
+        (at ?cup ?to)
+        (not (at ?cup ?to))
+        (clear ?from)
+        (not (clear ?to))
+		)
+    )
+)

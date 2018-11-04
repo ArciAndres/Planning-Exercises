@@ -1,0 +1,12 @@
+(define (domain BasicGridWorld)
+    (:requirements :strips)
+    (:predicates    (at ?sq)
+                    (obs ?sq)
+                    (adj ?sq1 ?sq2)
+    )
+    (:action move 
+        :parameters (?from ?to)
+        :precondition (and (at ?from)(not (obs ?to))(adj ?from ?to))
+        :effect (and (at ?to)(not(at ?from)))
+        )    
+)
